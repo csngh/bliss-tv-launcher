@@ -1,0 +1,14 @@
+<resources>
+    <style name="Theme.ProjectorLauncher" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#FF0A0F1C</item>
+        <item name="android:windowShowWallpaper">false</item>
+    </style>
+
+    <!-- Start-up screen: the sun rises over the hills on the dark brand background. -->
+    <style name="Theme.Bliss.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#0A0F1C</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_mark</item>
+        <item name="windowSplashScreenAnimationDuration">700</item>
+        <item name="postSplashScreenTheme">@style/Theme.ProjectorLauncher</item>
+    </style>
+</resources>

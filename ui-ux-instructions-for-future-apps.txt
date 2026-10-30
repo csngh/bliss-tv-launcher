@@ -1,0 +1,405 @@
+UI / UX INSTRUCTIONS FOR FUTURE APPS
+Saved: 2026-10-23 (updated the same day with the colour and polish rules, 3.20 to 3.30)
+Purpose: the owner's general design instructions for Android and web apps, in a form that can be reused to
+brief the building of any new app. Everything in this file is app-agnostic.
+
+HOW TO USE THIS FILE
+  - Paste section 1 (Android) or section 2 (web) as the design brief, then add sections 3 to 5.
+  - Section 6 records concrete values and techniques that worked, so a new app can start from them.
+  - Section 7 is a checklist to run before calling any screen finished.
+  - NOTE: sections 1 and 2 are the owner's original text, kept VERBATIM, including their dash style.
+    The no-em-dash rule in section 4 applies to text shown inside the apps, not to this file.
+
+======================================================================================================
+1. ORIGINAL BRIEF: NATIVE ANDROID APP (verbatim)
+======================================================================================================
+
+The application is functionally complete, but the UI needs a complete visual overhaul to look clean, modern, and professional. Do not change any functionality, logic, or data flow — this is a pure design and styling pass for a native Android app.
+
+OVERALL FEEL:
+The interface should feel calm, uncluttered, and intentional — lots of breathing room, nothing crammed together, nothing looking like a default unstyled template. Use Apple's Human Interface Guidelines as a general reference for clarity, hierarchy, and restraint — not for literal iOS components, since this is a native Android app, but for the underlying principles of clean, purposeful design. Follow Google's Material Design 3 guidelines as the platform-appropriate foundation.
+
+DESIGN SYSTEM:
+- Use Jetpack Compose with Material 3 components consistently throughout — buttons, cards, text fields, dialogs — rather than styling each screen differently
+- Use one clean, modern font throughout, with a clear size hierarchy — big and bold for headings, comfortable and readable for body text, smaller for secondary labels
+- Use a cohesive color palette built on Material 3's color system (dynamic color/Material You where appropriate): one main accent color for primary actions, soft neutral grays for backgrounds and surfaces, near-black (not pure black) for text, and clear colors for success, error, and warning states. Avoid pure white or pure black backgrounds — use soft off-white or soft dark surfaces instead, and support both light and dark themes
+- Keep spacing consistent everywhere — gaps between elements, padding inside cards, and margins between sections should follow a repeatable rhythm (e.g. 4/8/16/24/32dp increments), not random values
+
+VISUAL DETAIL:
+- Subtle elevation and shadows so cards, sheets, and dialogs feel lifted off the background
+- Rounded corners used consistently across all elements, not a mix of sharp and round
+- Smooth, quick animations when things change state — buttons give tactile press feedback (ripple effects), screen transitions and item changes animate smoothly instead of popping in abruptly, and loading states show a soft placeholder shimmer instead of a blank screen
+- Use one consistent icon style throughout (Material icon set), not a mix of different icon styles
+- Make sure the most important action on each screen visually stands out (e.g. a filled primary button or FAB), while less important actions are more subdued (text or outlined buttons)
+- Respect Android system gestures and navigation (back gesture, status bar, navigation bar) rather than fighting them
+
+LAYOUT:
+- Everything should look neatly aligned to a grid, not randomly placed
+- The app should adapt properly across different screen sizes and orientations (phones, tablets, foldables where relevant)
+- Empty states (nothing to show yet), loading states, and error states should all be thoughtfully designed, not blank or default-looking
+- Respect safe areas and avoid content being obscured by system bars or cutouts
+
+Go through every single screen and component in the application and apply this consistently, so the whole product feels like it was designed as one cohesive thing, not pieced together — polished down to the smallest detail, including spacing, touch target sizes, and transition timing.
+
+======================================================================================================
+2. ORIGINAL BRIEF: WEB APP (verbatim)
+======================================================================================================
+
+The application is functionally complete, but the UI needs a complete visual overhaul to look clean, modern, and professional. Do not change any functionality, logic, or data flow — this is a pure design and styling pass for a web application.
+
+OVERALL FEEL:
+The interface should feel calm, uncluttered, and intentional — lots of breathing room, nothing crammed together, nothing looking like a default unstyled template. Use Apple's Human Interface Guidelines as a general reference for clarity, hierarchy, and restraint — not for literal iOS components, since this is a web app, but for the underlying principles of clean, purposeful design.
+
+DESIGN SYSTEM:
+- Use a proper, consistent set of reusable UI components (buttons, cards, inputs, modals) rather than styling each one differently — a component library such as shadcn/ui or Radix UI is a good foundation if one isn't in place already
+- Use one clean, modern font throughout, with a clear size hierarchy — big and bold for headings, comfortable and readable for body text, smaller for secondary labels
+- Use a cohesive color palette: one main accent color used for primary actions, soft neutral grays for backgrounds and borders, near-black (not pure black) for text, and clear colors for success, error, and warning states. Avoid pure white or pure black backgrounds — use soft off-white instead
+- Keep spacing consistent everywhere — the gaps between elements, padding inside boxes, and margins between sections should follow a repeatable rhythm (e.g. 4/8/16/24/32px increments), not random values
+
+VISUAL DETAIL:
+- Subtle shadows so cards and popups feel like they're lifted off the background slightly
+- Rounded corners used consistently across all elements, not a mix of sharp and round
+- Smooth, quick animations when things change state — buttons react when pressed, things fade or slide in smoothly instead of popping in abruptly, and loading states show a soft placeholder shimmer instead of a blank screen
+- Use one consistent icon style throughout, not a mix of different icon sets
+- Make sure the most important action on each screen visually stands out, while less important actions are more subdued
+
+LAYOUT:
+- Everything should look neatly aligned to a grid, not randomly placed
+- The web app should be fully responsive and look intentional on both large desktop screens and smaller/mobile browser widths
+- Empty states (nothing to show yet), loading states, and error states should all be thoughtfully designed, not blank or default-looking
+
+Go through every single screen and component in the application and apply this consistently, so the whole product feels like it was designed as one cohesive thing, not pieced together.
+
+======================================================================================================
+3. LATER GENERAL INSTRUCTIONS FROM THE OWNER (in the order given)
+======================================================================================================
+Each item starts with a plain-language summary of what was asked, then "Owner's words" (the original wording, kept for reference), then the rule to follow.
+
+3.1  Ask for confirmation before any important or hard-to-undo action.
+     RULE: any important or hard-to-undo action asks for confirmation first. The dialog states what is
+     about to happen, asks "Do you want to continue?", and has a clear Cancel plus a confirm button named
+     after the action. The confirm button is the filled, prominent one; Cancel is subdued. Tapping
+     outside the dialog cancels.
+
+3.2  Write all text inside the app in a formal, polite tone.
+     Owner's words: "Keep the text professional"
+     RULE: all text inside the apps is formal and polite. No contractions (cannot, not can't; you will,
+     not you'll; is not, not isn't). No chatty or exclamation-heavy copy. Short, clear sentences. Use
+     "Please..." for instructions and "Unable to..." for failures. Encouraging messages are allowed but
+     stay measured.
+
+3.3  Never use long dashes in any text the app shows (they read as machine-written).
+     Owner's words: "Remove AI em-dashes from whole app/webapp"
+     RULE: no em-dashes and no en-dashes in any text shown to users, in code comments, or in docs the app
+     ships. Rewrite the sentence instead (comma, colon, full stop, or the word "to" for ranges, for
+     example "20 to 30" or "9:02 AM to 3:50 PM"). An empty value in a table is shown as a plain hyphen "-".
+
+3.4  Show a small credit line at the bottom of every screen.
+     Owner's words: "Add 'Developed by Pinak AI Solutions' throughout the app"
+     RULE: a small, quiet credit line appears at the foot of every screen, pinned to the very bottom of
+     the window (not floating under short content). The only exceptions are transient screens such as a
+     splash or a loading spinner.
+
+3.5  Make the Android app always dark, whatever the phone's setting is.
+     Owner's words: "Lock the color scheme of the app to dark mode."
+     RULE: when asked, the app is dark-only and ignores the system light/dark setting. That includes the
+     status bar and navigation bar icons (light icons) and the window background and launch screen.
+     Soft dark surfaces, never pure black.
+
+3.6  Colour two opposite actions differently: green for the positive one, red for the negative one.
+     Owner's words: "A button should be a material shade of green and the opposing one a material shade of red."
+     RULE: opposing actions use semantic colours (green for the positive or start action, red for the
+     negative or end action). On a dark theme use the lighter Material tones (400) with dark text,
+     because the deep 700/800 tones sink into the background. Use the same colours in the confirmation
+     dialog's confirm button, and show an unavailable action in the muted disabled style.
+
+3.7  Pair a summary number with a message that says whether it is good or needs attention.
+     Owner's words: show a warning when the number is below its goal, and a good message when it is met.
+     RULE: a summary number is paired with a status that is explained in words, not colour alone.
+     Below its goal: amber/warning tone, a warning icon, and a plain sentence on what to do.
+     Meeting its goal: green/success tone, a check icon, and an encouraging sentence.
+     No data yet: a neutral tone and a sentence saying when the number will appear.
+
+3.8  Soften the edges of scrolling lists so content does not end in a hard cut-off line.
+     Owner's words: "When scrolling, these borders are quite harsh. Can we do something about it to make it visually appealing?"
+     RULE: scrolling content never meets the status bar or a footer with a hard cut-off line. Fade the top
+     and bottom edges of the scroll area to transparent. The fade should only appear on an edge when there
+     is more content in that direction, and should ease in and out.
+
+3.9  Format typed codes automatically: insert the separator by itself after the first group.
+     Owner's words: "Make sure the dash appears automatically after the first set of characters."
+     RULE: structured input (codes, phone numbers, card-like values) formats itself as the user types.
+     Store only the raw characters and add separators for display only, so deleting works naturally.
+     Show the separator as soon as the first group is complete (for example ABCDE-). Uppercase
+     automatically if the value is case-insensitive, and accept pasted text with or without separators.
+
+3.10 Give the Android app a proper logo, an animated start-up screen and the requested app name.
+     Owner's words: "Make an amazing modern polished logo + splash screen for the android app".
+     RULE: every app gets a proper brand kit: a simple mark that explains the product, an adaptive
+     launcher icon (round and squircle safe) including a monochrome layer for themed icons, an animated
+     splash screen on the app's dark background, the requested name set as the app label, a logo lockup,
+     a 512 px store icon and a vector master. The mark is reused inside the app (header, loading screen).
+
+3.11 (Web) Let people pick from a searchable list instead of typing a value that must match a fixed set.
+     Owner's words: it should be a selection from a list, not a manual input.
+     RULE: never make people type values that must match a fixed set. Offer a searchable list. Show a
+     helpful detail next to each option. Only allow picking from the list.
+
+3.12 (Web) Make every person or item picker a type-to-search field with suggestions, on every page.
+     Owner's words: "The selection should also be an input field with search and autocomplete".
+     RULE: pickers over people or long lists are search-as-you-type fields. Match on the name and on a
+     secondary key (such as a code). Keyboard support: arrow keys, Enter to choose, Escape to close. A
+     clear (x) button. An "everyone / all" choice. Optionally let Enter apply the typed text as a plain
+     text search.
+
+3.13 (Web) Put related filters next to each other in one row.
+     Owner's words: "The status should be a filter adjacent to the other filter."
+     RULE: related filters sit together in one row above the content they control, never scattered.
+
+3.14 (Web) Remove a control when another control already does the same job.
+     Owner's words: "Remove this, not needed anymore since the filter already exists."
+     RULE: do not keep two controls that do the same job. When a better control exists, remove the old
+     one. Keep only what still adds information (for example a colour key).
+
+3.15 (Web) Pin the credit line to the very bottom of the window, and make single-screen views fit the screen without scrolling.
+     Owner's words: the credit text should be at the very bottom, and a one-screen view should not scroll and should fit any screen.
+     RULE: footers are pinned to the bottom of the window (full-height page column, footer pushed down).
+     Views that are meant to be seen at a glance (one record, one period) are built to FIT the screen with
+     no page scrolling, at any resolution, with their contents adapting to the room available.
+
+3.16 (Web) After removing an element, fix the spacing it leaves behind.
+     Owner's words: "This looks so weird now. Fix the layout." (said after a control was removed)
+     RULE: removing an element must not remove the spacing it provided. After every removal, re-check the
+     gaps, the minimum heights and the wrapping at several widths.
+
+3.17 (Web) Use the full width of the screen with only a small margin, at any screen size.
+     Owner's words: "There is a lot of space on all 4 sides. Expand it to have minimum padding at any resolution."
+     RULE: data-heavy pages use the full width with small, consistent edge padding. Do not cap the width
+     at a narrow maximum and centre it on wide screens. Cells and columns stretch to use the space.
+
+3.18 (Web) Make the key number in a cell big, and colour it by its state.
+     Owner's words: "Show the numbers in a bigger font. Plus color code" the states.
+     RULE: the number that matters most in a cell is the biggest text in it, sized relative to the cell,
+     and its colour encodes its state (below / on / above its goal) with a small key explaining the colours.
+     Never rely on colour alone: also provide a text label (tooltip or accessible label).
+
+3.19 (Web) Make content inside small, resizable cells shrink gracefully instead of overflowing.
+     Owner's words: "Fix this layout issue." (content was overflowing a small cell)
+     RULE: content inside resizable cells degrades gracefully in a fixed order of importance, using
+     container queries: first drop secondary text, then merge badges into an icon or dot, then drop the
+     least important number. Verify with measurements, not by eye (see section 7).
+
+3.20 Use colourful icons everywhere and improve the overall look and feel (web first, then Android).
+     Owner's words: "Add colorful icons everywhere across the dashboard, and improve the UI / UX".
+     RULE: icons sit on tinted rounded tiles in a small fixed set of accent tones (blue, green, amber,
+     red, violet, teal, pink). Each tone is a pair: an icon colour and a soft tint, defined separately
+     for light and dark. Tone follows meaning and stays consistent: one tone per navigation area, and
+     for numbers a neutral count is blue, success green, warning or lateness amber, failure red,
+     pending violet. Apply it to navigation, page headers, section headings, stat cards, list rows,
+     empty states, row action buttons and tags. Compute contrast for every icon-on-tint pair (graphics
+     need 3:1, aim for 4.5:1). Use the same tones in the web app and the Android app.
+
+3.21 Show people as coloured initials circles.
+     RULE: people are shown as initials in a circle whose colour is picked from a hash of the name, so
+     the same person always has the same colour everywhere (tables, lists, headers).
+
+3.22 Use designed dialogs for everything, never the browser's plain pop-ups.
+     Owner's words: "Styled dialogs for everything, do not use browser's own".
+     RULE: never use the browser's confirm, alert or prompt. One reusable styled dialog (title, message,
+     Cancel plus a confirm button named after the action, a red solid button for destructive actions)
+     returns a yes or no. Escape, clicking outside and Cancel all mean no.
+
+3.23 Give the settings page a roomy, well-organised layout.
+     Owner's words: "Beautify the settings page, everything looks cramped and not good".
+     RULE: a settings page is built from sections. Each section has its title and a one-line
+     explanation on the left (a narrow column, about 150 to 200 px) and its controls in a card on the
+     right; on narrow screens the title sits above the card. Inside a card, related fields form small
+     groups separated by a hairline and a small-caps sub-heading, with generous spacing. Hints under
+     fields say what a value does. The Save bar is sticky at the bottom. Put an icon tile on each section
+     title.
+
+3.24 Add a button that switches the dashboard between light and dark mode.
+     Owner's words: "Dashboard show a button to switch light and dark".
+     RULE: a sun or moon icon button in the sidebar and in the phone top bar. It
+     starts from the system setting, switches to the opposite mode on click and remembers the choice
+     (guard storage with try and catch). A tiny script in the head applies the saved choice before first
+     paint so there is no flash. The icon shows the mode you would switch to, and the button has an
+     accessible label and a tooltip.
+
+3.25 Make the Android app always light (it had been always dark before).
+     Owner's words: "Lock the app to light mode".
+     RULE: locking the theme is a per-app decision that touches several places: the theme default, the
+     status and navigation bar icon style, the window background, the splash screen background and the
+     debug gallery default. Change all of them together and check the launch screen for a flash.
+
+3.26 Keep sizes consistent: controls in a row, paired images and cards should match.
+     Owner's words: "Make the sizes consistent" / "Inconsistencies in sizes on two slides".
+     RULE: controls in one row share one height and one frame (the same border and corner radius, no
+     shadow on only one of them). Paired screenshots and cards on one slide are the same size and
+     aligned at the top; captions reserve the same height so one wrapping line cannot shift a frame.
+     Equal-height cards come from stretching the row, not from letting the text decide.
+
+3.27 Give every tag an icon, and a different colour when it means something different.
+     Owner's words: "has no icons" / "use a different color for face".
+     RULE: every tag carries an icon and a word. Tags with different meanings get different tones, so
+     two neighbouring tags are never the same colour unless they mean the same thing.
+
+3.28 Mark which form fields are required.
+     Owner's words: "Mark fields which are required".
+     RULE: every mandatory field carries a red asterisk after its label, and the form shows a small
+     "* Required" note near its title. Screen readers also get the word "required". Optional fields stay
+     unmarked. Do not mark a field required unless the form really refuses to save without it.
+
+3.29 Presentation PDFs built from the app's own screenshots.
+     Owner's words: "only main features, no silly things", plus the grey-box and overlap fixes.
+     RULE: show only the main features. No error screens, empty states, wrong-password or wrong-code
+     screens. Screenshots are shown whole or cropped only at the bottom, equal in size when paired,
+     and never overlap the text or the footer. Do not use blurred box-shadows: some PDF viewers draw them
+     as grey rectangles. Use a thin border instead. Open the PDF in the viewer the owner uses before
+     calling it done.
+
+3.30 A narrated launch video built from the same screenshots.
+     Owner's words: "full brag video about the whole presentation", narrated by the Heart voice.
+     RULE: one scene per slide, the real screens, a steady narrator, music low under the voice.
+     Every line on screen is held long enough to read (about 0.5 s plus 0.3 s per word). The first frame
+     is a finished frame (it becomes the thumbnail). Paired frames and cards are equal in size.
+
+======================================================================================================
+4. CONTENT, COPY AND TONE RULES (summary of 3.2 and 3.3 plus what was applied)
+======================================================================================================
+  - Formal, courteous, concise. No contractions. No em-dashes or en-dashes anywhere visible.
+  - Instructions start with "Please". Errors say what happened and what to do next.
+  - Failure messages never leak thresholds, scores or internal reasons beyond what helps the user act.
+  - Success messages are plain statements.
+  - Numbers carry units and a consistent format (durations as 0h33m, averages as 9.2 h).
+  - Empty states: an icon, a short headline, one helpful sentence, and an action if there is one.
+  - Error states: say what went wrong in plain words and offer a retry or the next step.
+  - Dates and times use one consistent format throughout.
+
+======================================================================================================
+5. DEFAULTS AND DECISIONS THAT WERE MADE (change per app if needed)
+======================================================================================================
+  - Android minimum SDK 31, so only non-deprecated APIs are used.
+  - Typeface: Inter (SIL Open Font License), variable weight, bundled with the app and self-hosted on web.
+  - Colour on Android: Material You dynamic colour with a fixed brand fallback scheme, plus custom success
+    and warning roles that Material 3 does not provide. One constant switches to the fixed brand colour.
+  - Colour on web: one accent, soft off-white and soft charcoal surfaces, near-black text, status colours
+    that were contrast-checked in both light and dark modes.
+  - Light and dark: on Android the app was first locked to dark and later locked to light, both on
+    request; the web app follows the system theme and has a manual light/dark switch. Ask the owner which
+    is wanted for each new app.
+  - The system back gesture inside a flow cancels the flow instead of closing the app.
+  - The keyboard "Done" key submits a completed form field.
+  - Error banners offer a Retry button.
+  - Animations respect the system "remove animations" setting.
+
+======================================================================================================
+6. CONCRETE VALUES AND TECHNIQUES THAT WORKED (starting kit)
+======================================================================================================
+SPACING AND SHAPE
+  - Spacing scale: 4, 8, 16, 24, 32, 48. Minimum touch target 48dp. Primary button height 52dp.
+    Readable content width on tablets and landscape: about 560dp.
+  - Corner radii: 8 (small controls), 12 (fields, small cards), 16 (cards), 24, 28 (dialogs). Buttons are
+    fully rounded on Android and 8px on web.
+  - Elevation: cards about 1dp; popups and dialogs a deeper soft shadow; use three shadow levels on web.
+
+ANDROID (Jetpack Compose, Material 3)
+  - Files: Spacing, Color (light + dark brand schemes, extended success/warning colours), Type, Theme
+    (shapes, dynamic colour switch, dark lock), then a components file.
+  - Components: PrimaryButton (filled), SecondaryButton (outlined), TertiaryButton (text), ColoredButton
+    (explicit colours, muted when disabled), AppCard (lifted), IconBadge, SectionTitle, EmptyState,
+    ErrorBanner with Retry, ShimmerBox (skips animation if the system animation scale is 0), AnimatedBadge
+    (soft spring), FeedbackPanel (icon, title, body, actions), Page (safe areas, max width, scroll,
+    vertical centring, pinned footer), credit line, ConfirmDialog, BrandMark / BrandWordmark.
+  - Screen transitions: fade-through (fade in about 240 ms after a 90 ms delay, slight upward settle,
+    fast fade out). Progress values animate (about 400 to 600 ms).
+  - Structure every screen as a stateless "Content" composable plus a thin stateful wrapper, and add a
+    DEBUG-ONLY gallery screen that renders every state from sample data. This allows screenshots of
+    states that are hard to reach (errors, permission problems, success). Never ship it in release.
+  - Edge-to-edge with transparent bars; light bar icons when the app is dark-only; adaptive layouts with
+    BoxWithConstraints (two panes from about 840dp wide, side-by-side layouts in landscape).
+  - Soft scroll edges: draw a gradient mask over the scroll viewport (offscreen compositing, destination-in
+    blend, about 28dp), each edge animated in only when that direction can still scroll.
+  - Formatted input: use a VisualTransformation with an offset mapping; store raw characters only.
+  - Permission flows: request what is needed together (precise and approximate location are requested
+    together on Android 12+). Detect when the system will no longer show the prompt and then offer "Open
+    settings". Re-check on resume and continue automatically when access has been granted.
+  - Branding: adaptive icon (background gradient, foreground mark inside the 66dp safe zone, monochrome
+    layer), animated-vector splash on the dark background (about 700 ms, held on cold start only),
+    core-splashscreen with a post-splash theme.
+
+WEB (vanilla or framework; tokens work anywhere)
+  - CSS custom properties for colour, spacing, radius, shadow, motion; separate light and dark sets.
+  - Component classes: button variants (primary, secondary, ghost, danger), inputs, card, table with sticky
+    header and tabular numerals, pills, modal dialog with backdrop blur, toasts, skeleton shimmer, empty
+    and error states, search-and-autocomplete picker, page header, stat tiles.
+  - One icon family drawn the same way (24px grid, about 1.75 stroke, round caps), inlined as SVG.
+  - Never inject untrusted text as HTML: build the DOM with textContent. Keep a strict content security
+    policy and self-host fonts and libraries.
+  - Page frame: full-height column so the footer sits at the very bottom; the sidebar on desktop becomes a
+    bottom tab bar plus a slim top bar on phones.
+  - Fit-to-screen view recipe: make the main area exactly one viewport tall, give the grid rows equal
+    shares of the remaining height, and let each cell adapt with container queries (note that container
+    queries measure the CONTENT box, so subtract the cell padding when choosing thresholds).
+  - Value emphasis: size text from the cell (clamp with container units), colour by state.
+  - Make flex or grid children shrinkable (min-width 0) so a wide child cannot push the page sideways.
+
+COLOURFUL ICONS AND POLISH (starting kit)
+  - Tones, light (icon colour / tint): blue #0a64d6 / #e6f0fc, green #1a7f4b / #e3f5ea,
+    amber #a35a07 / #fcf0d9, red #c0392b / #fdeae7, violet #5b3cc4 / #efe9fd, teal #0b7285 / #dbf0f4,
+    pink #b8286b / #fde7f1 (contrast 4.4 to 6.1).
+  - Tones, dark (icon colour / tint): blue #6db0f8 / #14253b, green #5fd096 / #112a1c,
+    amber #f0b45a / #33260c, red #ff8a7e / #3a1815, violet #c4b5fd / #2a1f45, teal #5fcde0 / #0f2d35,
+    pink #f59ac4 / #3d1830 (contrast 6.8 to 8.2).
+  - Tile sizes: 28 (small), 36 (default), 44 (large, page headers) px, corner radius 8 to 12. On Android
+    use a rounded square (12 dp, 16 dp from 48 dp up) and keep both a tinted and a solid variant per tone
+    (container, content, solid, on-solid); the solid variant works on any background, for example a
+    status card.
+  - Sidebar: a coloured tile per item; the active item gets the tone's tint as its background, a 3 px
+    marker on its edge and a lifted white tile. On phones the bottom bar keeps the coloured icons and
+    drops the tile background.
+  - Stat cards: a 3 px top edge in the tone, the number large, an icon tile at the right, and a 2 px lift
+    on hover. Six stats in a row on wide screens.
+  - Page header: an icon tile (44 px) beside the title; hide it where the page must fit one screen.
+  - Manual theme on the web: define the dark values twice, once under
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { ... } } and once under
+    :root[data-theme="dark"] { ... }; the toggle only sets data-theme. Also set color-scheme per theme.
+  - Settings layout: a grid of [minmax(150px, 200px) | 1fr] with a 24 px gap, one column under 900 px.
+  - Tables: avatar plus name and code in the first column; merge secondary columns (a detail under a
+    main value) rather than letting the table scroll sideways.
+  - Never draw blurred shadows in anything exported to PDF; use borders.
+
+COLOUR AND ACCESSIBILITY
+  - Text on tinted status backgrounds must reach 4.5:1 contrast. Compute it. In one project four status
+    colours failed by a hair in light mode and were darkened after the check.
+  - Coloured-action shades for dark UIs: Green 400 (#66BB6A) with text #0B2A10 (about 6.6:1) and
+    Red 400 (#EF5350) with text #2B0606 (about 5.3:1); both stand out well on a dark surface.
+  - Status is always paired with an icon and a word, never colour alone.
+  - Provide accessible labels, live regions for changing prompts, and keyboard operation for pickers.
+
+======================================================================================================
+7. PRE-SHIP CHECKLIST FOR ANY SCREEN
+======================================================================================================
+  [ ] Every state looked at: loading, empty, error, success, long text, very short text.
+  [ ] Light and dark (or dark only) checked; no pure white or pure black backgrounds.
+  [ ] Phone portrait, phone landscape, tablet; web at large desktop, laptop, tablet and phone widths.
+  [ ] Measured, not eyeballed: no horizontal page scroll, no clipped or overlapping text in resizable
+      cells, fit-to-screen views really do not scroll (test about ten sizes from 1920x1080 to 360x640).
+  [ ] Spacing uses only the scale values. Corners and icons are consistent.
+  [ ] One clear primary action per screen; the rest are quieter.
+  [ ] Touch targets at least 48dp. System bars, cutouts and the back gesture respected.
+  [ ] Contrast computed for every text/background pair, including status colours.
+  [ ] Copy reviewed: professional, no contractions, no em-dashes or en-dashes, no stray "null",
+      "undefined" or "NaN" text anywhere (scan every page's text automatically).
+  [ ] After removing or adding any element, spacing and wrapping re-checked.
+  [ ] Credit line present and pinned to the bottom where required.
+  [ ] Confirmation dialogs on consequential actions. Retry on recoverable errors.
+  [ ] Animations smooth and quick, and disabled when the system asks for reduced motion.
+  [ ] Screenshots reviewed for every screen, including the ones only reachable in a debug gallery.
+  [ ] Icons sit on tinted tiles in the shared tones, the same meaning always has the same tone, and
+      every tag has an icon and a word.
+  [ ] Controls in one row have the same height; paired images and cards are the same size.
+  [ ] No browser confirm, alert or prompt anywhere; styled dialogs only.
+  [ ] Required fields are marked with an asterisk and the form says what the asterisk means.
+  [ ] Light/dark switch works, survives a reload and does not flash on load (when the app supports both).
+  [ ] PDFs have no blurred shadows and were opened in the owner's viewer.

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="1080" height="1080"><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#26346B"/><stop offset="1" stop-color="#0A0F1C"/></linearGradient>
+<linearGradient id="badge" x1="0.15" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#3F54A3"/><stop offset="1" stop-color="#17204A"/></linearGradient>
+<linearGradient id="sun" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD27A"/><stop offset="1" stop-color="#FF6B9A"/></linearGradient>
+<linearGradient id="far" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C9CFF"/><stop offset="1" stop-color="#5FCDE0"/></linearGradient>
+<linearGradient id="near" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#2BB6C9"/></linearGradient>
+</defs><rect width="108" height="108" fill="url(#bg)"/><circle cx="54" cy="54" r="32" fill="url(#badge)"/><clipPath id="c"><circle cx="54" cy="54" r="32"/></clipPath><g clip-path="url(#c)"><circle cx="54" cy="47" r="12.5" fill="url(#sun)"/><path d="M20,66 C32,56 42,58 54,63 C66,68 77,58 88,60 L88,90 L20,90 Z" fill="url(#far)" opacity="0.92"/><path d="M20,73 C33,67 44,71 54,75 C65,79 77,70 88,72 L88,90 L20,90 Z" fill="url(#near)"/></g></svg>

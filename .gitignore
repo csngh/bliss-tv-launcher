@@ -1,0 +1,29 @@
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+keystore/
+keystore.properties
+*.jks
+dist/
+
+# macOS
+.DS_Store
+
+# Other signing keys and binaries
+*.keystore
+*.apk
+*.aab
+
+# Gradle / Kotlin / Android tooling
+.kotlin/
+.externalNativeBuild/
+.cxx/
+captures/
+*.hprof
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
